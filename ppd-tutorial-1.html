@@ -1,0 +1,81 @@
+<html>
+
+	<head>
+	
+		<title>PhrasesPd Tutorial: Getting Started</title>
+		
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+	
+	<body>
+	
+		<div id="holder">
+		
+			<div class="row">
+				<img src="imgs/header.png" />
+			</div>
+		
+			<div class="row">
+				<p>
+					<br/>
+					<b>PhrasesPd Tutorial</b><br/>
+					<br/>
+					<b>1. Getting Started</b><br/>
+					<br/>
+					Hello, bonjour, xoka! And let's jump right in.<br/>
+					<br/>
+					First, you will need to install Puredata, the audiovisual programming language on top of which PhrasesPd runs. Puredata is cross-platform, Windows/Linux/OSX, though I understand it is most user-friendly on Windows. It can be found at <a href="http://puredata.info/">Puredata.info</a>. NOTE: Make sure you download Pd-extended, not Pd-vanilla; and make sure you get version 0.43.4. Install Puredata as per your OS's installation procedure.<br/>
+					<br/>
+					Now you are ready to download PhrasesPd! It can be found at the <a href="https://github.com/strangewarp/PhrasesPd">PhrasesPd Github page</a> (<a href="https://github.com/strangewarp/PhrasesPd/archive/master.zip">direct download link</a>). Download the zip file, and extract it.<br/>
+					<br/>
+					Inside the PhrasesPd-master folder you have extracted, you will see a variety of .pd, .lua, and .pd_lua files.<br/>
+					<br/>
+					Place these files in your /pd/extra directory:<br/>
+					phrases-editor-and-sequencer.pd_lua<br/>
+					phrases-get-prefs.pd_lua<br/>
+					phrases-gui-generator.pd_lua<br/>
+					phrases-gui-tables.lua<br/>
+					phrases-keychord.pd_lua<br/>
+					phrases-keychord-tables.lua<br/>
+					phrases-main-tables.lua<br/>
+					<br/>
+					Place these files in any other directory whose location is convenient to you (note: this will be the base for your PhrasesPd savefiles as well, so plan accordingly):<br/>
+					default.lua<br/>
+					phrases-hotseats.lua<br/>
+					phrases-makecolor.pd<br/>
+					phrases-prefs.lua<br/>
+					phrasespd.pd<br/>
+					<br/>
+					Now, you will need to change your PhrasesPd preferences to match your Monome setup. Open <b>phrases-prefs.lua</b> in your text editor of choice. You will see something like this:<br/>
+					<br/>
+					<img src="imgs/1-1.png" /><br/>
+					<br/>
+					<b>savedir</b>: This should be the full path of the directory where you've put phrasespd.pd. It's also where you will be keeping your savefiles. Don't delete the double-quotes around it!<br/>
+					<b>width</b>/<b>height</b>: The size of your Monome, in buttons.<br/>
+					<b>adcnum</b>: The number of ADCs on your Monome. If you don't know how many ADCs you have, then you probably have 0 ADCs.<br/>
+					<b>osctype</b>: MonomeSerial or serialosc.<br/>
+					<b>osclisten</b>/<b>oscsend</b>: Correspond to your Monome's current listen/send ports.<br/>
+					<br/>
+					Save your preferences and close the file.<br/>
+					<br/>
+					Open MonomeSerial or serialosc, and set your Monome's communications prefix to /phrases/.<br/>
+					<br/>
+					Open up Puredata. Select the "Media" menu &gt; "Midi Settings". Set the Output Device to whichever MIDI device should receive PhrasesPd's MIDI output. Set the Input Device to whatever device you might use to record sequences (this part is optional). Hit "Apply" and close the MIDI Settings window.<br/>
+					<br/>
+					Now, in Puredata, hit Ctrl-O, navigate to the directory where you've put phrasespd.pd, and open it up! 3 windows ought to open, and the Puredata console ought to fill with PhrasesPd status messages. You are now ready to start using PhrasesPd!<br/>
+					<br/>
+				</p>
+			</div>
+			
+			<p class="textheader">
+				Next: <a href="ppd-tutorial-2.html">2. UI and Basic Commands</a><br/>
+				<br/>
+				Up: <a href="index.html">PhrasesPd Tutorial Overview</a><br/>
+			</p>
+		
+		</div>
+	
+	</body>
+	
+</html>
