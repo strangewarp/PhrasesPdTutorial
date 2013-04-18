@@ -2,7 +2,7 @@
 
 	<head>
 	
-		<title>PhrasesPd Tutorial: Transference</title>
+		<title>PhrasesPd Tutorial: Transference and ADC Control</title>
 		
 		<link rel="stylesheet" href="style.css">
 		
@@ -23,16 +23,60 @@
 					<br/>
 					<b>PhrasesPd Tutorial</b><br/>
 					<br/>
-					<b>4. Transference</b><br/>
+					<b>4. Transference and ADC Control</b><br/>
 					<br/>
+					In your Grid Window, you might notice that when a phrase is playing, it tends to look like a rainbow vomit hashtag factory. Why the hashtags, you might ask? Well, this isn't an arbitrary design choice. Each phrase's panel has 8 sub-panels along its edges, and 1 in its center, which indicate whether a phrase is capable of transfering its activity to any adjacent phrases (or whether it transfers to itself). If any of these directions are enabled, their corresponding sub-panels will brighten, and their parent phrase's panel in the Grid Window will look a bit different.<br/>
 					<br/>
-
+					So how do you change a phrase's transference? First, let's go to the relevant part of the editor, in the Editor Window. Press your <b>Insert</b> key once, to toggle over to the Transference Panel. In this mode, you will see each phrase's transference data, and you can browse through it with the <b>arrow keys</b>, much like in the Phrase Panel.<br/>
+					<br/>
+					Each phrase's transference is divided into 10 slots. The first nine slots correspond to directions:<br/>
+					1. Up-Left<br/>
+					2. Up<br/>
+					3. Up-Right<br/>
+					4. Left<br/>
+					5. Stationary<br/>
+					6. Right<br/>
+					7. Down-Left<br/>
+					8. Down<br/>
+					9. Down-Right<br/>
+					<br/>
+					To change a transference value, navigate to it with your <b>arrow keys</b>, and then press your <b>velocity keys</b> (by default, these are mapped to the <b>- = _ +</b> keys).<br/>
+					<br/>
+					If one of these directions is filled with a value, then the phrase in its corresponding direction will automatically start playing when the active phrase reaches the end of its sequence. This wraps around the borders of the Monome, as well. If multiple directions are filled with values, then each corresponding phrase has a chance of being activated. To favor one transference direction over another, simply give it a higher transference value than the others.<br/>
+					<br/>
+					The 10th direction is "Persistence". It can only be set to 0 or 1, and controls whether the phrase halts its own activity upon reaching the end of its sequence.<br/>
+					<br/>
+					<b>Note:</b> In each phrase, at least one of the nine directions must contain a value for PhrasesPd to work properly.<br/>
+					<br/>
+					And that's all there is to transference.<br/>
+					<br/>
+					Now, if your Monome doesn't have any ADCs, then this is the extent of PhrasesPd's features that you would find useful. But there is still one more aspect of the editor to learn.<br/>
+					<br/>
+					Focus on your Editor Window, hit the <b>Insert</b> key again, and you will find yourself looking at a third screen: the ADC Panel. This panel contains options for how your Monome's ADCs will modify and control MIDI bytes while in Play mode.<br/>
+					<br/>
+					In the panel, each ADC is comprised of multiple lines, and you can scroll between them with the <b>Up</b> and <b>Down</b> arrows. ADC parameters are global, so tabbing between phrases will do nothing here.<br/>
+					<br/>
+					For each ADC, there are four parameters:<br/>
+					<br/>
+					<b>Chan</b>: The MIDI channel that the ADC acts upon. It can be changed with the <b>;</b> and <b>'</b> buttons.<br/>
+					<br/>
+					<b>Target</b>: The MIDI byte that the ADC changes. "2" is pitch; "3" is velocity. Changed with the <b>.</b> button.<br/>
+					<br/>
+					<b>Style</b>: The type of range that the ADC position inhabits. "Relative" is centered on its given note/velocity value; "absolute" is an unmoving range. Changed with the <b>/</b> button.<br/>
+					<br/>
+					<b>Magnitude</b>: The size of the range. Changed with the <b>velocity buttons</b> (default keys: <b>- = _ +</b>).<br/>
+					<br/>
+					That's all there is to it. Now, press <b>Insert</b> again, and your Editor Window will be returned to its Phrase Panel.<br/>
+					<br/>
+					You now know all there is to become an expert PhrasesPd user. Toy around, practice! Remember to save often!<br/>
+					<br/>
+					PhrasesPd is really a remarkably simple program once you get over the initial tutorial shock; but despite that, it makes for some deep composition, and so I am quite proud of it! Hopefully you will enjoy it too. If your friends are looking for a sequencer somewhere between a tracker and a step sequencer, but without the restrictive limitations of either, tell them about PhrasesPd!<br/>
+					<br/>
 				</p>
 			</div>
 			
 			<p class="textheader">
 				Previous: <a href="ppd-tutorial-3.html">3. Advanced Commands</a><br/>
-				Next: <a href="ppd-tutorial-5.html">5. ADC Control</a><br/>
 				<br/>
 				Up: <a href="index.html">PhrasesPd Tutorial Overview</a><br/>
 			</p>

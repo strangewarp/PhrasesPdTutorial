@@ -37,14 +37,28 @@
 					<br/>
 					Undo and Redo are <b>Shift-Tab-Z</b> and <b>Shift-Tab-Y</b>, respectively. Undo history is 50 states deep.<br/>
 					<br/>
-					
+					Now that you're adept at inserting, deleting, saving and loading notes, we're going to talk about commands for shifting around what's already there.<br/>
+					<br/>
+					To move a note to a different tick within the phrase, use <b>Shift-Q</b> and <b>Shift-W</b>. To shift all notes in the phrase, use <b>Shift-E</b> and <b>Shift-R</b>. The notes will be moved by a number of spaces equal to the current velocity value.<br/>
+					<br/>
+					To shift the active note up or down by a certain number of semitones, use <b>Shift-A</b> and <b>Shift-S</b>. To do this to every onte in the phrase, use <b>Shift-D</b> and <b>Shift-F</b>. Again, the notes' pitches are changed based on the velocity value.<br/>
+					<br/>
+					To shift the active note's velocity-byte in the same manner, use <b>Shift-Z</b> and <b>Shift-X</b>. For every velocity byte in the phrase, use <b>Shift-C</b> and <b>Shift-V</b>. This also is dictated by the global velocity value.<br/>
+					<br/>
+					If you want to automatically add NOTE-OFF commands before each NOTE-ON in the active phrase, hit <b>Shift-Tab-A</b>. Warning: This only works for monophonic phrases.<br/>
+					<br/>
+					To add NOTE-OFF commands that are spaced apart from their corresponding NOTE-ONs by the Spacing value, use <b>Shift-Tab-S</b>.<br/>
+					<br/>
+					At some point, your keyboard input into PhrasesPd may have stopped working. This, regrettably, is because Puredata and pdlua don't necessarily handle rapid-fire keychords that well. But fear not! Your work is not lost! Hit <b>Space</b> once. This is the keychord panic button, and PhrasesPd ought to start accepting user input again. (To ease your mind: this will never happen with Monome buttons. The underlying structure there is much more reliable.)<br/>
+					<br/>
+					That is the extent of PhrasesPd's advanced editor commands. In the next installment, we will be talking about ADC Control and Transference.<br/>
 					<br/>
 				</p>
 			</div>
 			
 			<p class="textheader">
 				Previous: <a href="ppd-tutorial-2.html">2. UI and Basic Commands</a><br/>
-				Next: <a href="ppd-tutorial-4.html">4. Transference</a><br/>
+				Next: <a href="ppd-tutorial-4.html">4. Transference and ADC Control</a><br/>
 				<br/>
 				Up: <a href="index.html">PhrasesPd Tutorial Overview</a><br/>
 			</p>
