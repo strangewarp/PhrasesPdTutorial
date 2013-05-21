@@ -23,33 +23,38 @@
 					<br/>
 					<b>3. Advanced Commands</b><br/>
 					<br/>
-					Now, having saved a file, you might be looking at the loadfile box warily, dreading the fact that you would have to type in filenames during a performance. But there is a feature to alleviate this! In the Editor Window, if you look at the rightmost column, you will see a numbered list from 1 to 20. These are the loadfile hotseats.<br/>
+					Now, having saved a file, you might be looking at the loadfile box warily, dreading the fact that you would have to type in filenames during a performance. But there is a feature to alleviate this! In the Editor Window, if you look at the rightmost column, you will see a numbered list from 1 to 20. These are the <b>loadfile hotseats</b>.<br/>
 					<br/>
 					You can change your hotseats list by editing the contents of <b>phrases-hotseats.lua</b>. Hit <b>Shift-Number</b> or <b>Shift-Backspace-Number</b> to toggle between loadfile hotseats, and then hit <b>Shift-Tab-Enter</b> to load the corresponding songfile.<br/>
+					<i>Note: Loading any songfile will erase any unsaved songdata you might have been editing in the Editor Window.</i><br/>
 					<br/>
-					<b>NOTE:</b> Loading any songfile will erase any unsaved songdata you might have been editing in the Editor Window.<br/>
+					In addition to entering MIDI notes with the computer keyboard, PhrasesPd also allows the user to enter MIDI data with an <b>external MIDI device</b>. If you didn't set one previously, go to Puredata's <b>Media</b> menu, select <b>MIDI Settings</b>, and then set the "Input Device" to whatever MIDI device you want to use.<br/>
 					<br/>
-					In addition to entering MIDI notes with the computer keyboard, PhrasesPd also allows the user to enter MIDI data with an external MIDI device. If you didn't set one previously, go to Puredata's "Media" menu, select "MIDI Settings", and then set the "Input Device" to whatever MIDI device you want to use.<br/>
+					Hit <b>Shift-O</b> and <b>Shift-P</b> to select the <b>MIDI-Catch type</b>, which changes PhrasesPd's behavior when it receives notes from the MIDI input device.<br/>
 					<br/>
-					Hit <b>Shift-O</b> and <b>Shift-P</b> to select the MIDI-Catch type, which changes PhrasesPd's behavior when it receives notes from the MIDI input device.<br/>
+					Now, make sure you are in <b>REC</b> mode, and try entering commands with your MIDI input device. PhrasesPd ought to be catching them now!<br/>
 					<br/>
-					Now, make sure you are in REC mode, and try entering commands with your MIDI input device. PhrasesPd ought to be catching them now!<br/>
-					<br/>
-					Undo and Redo are <b>Shift-Tab-Z</b> and <b>Shift-Tab-Y</b>, respectively. Undo history is 50 states deep.<br/>
+					<b>Undo and Redo</b> are <b>Shift-Tab-Z</b> and <b>Shift-Tab-Y</b>, respectively. Undo history is 50 states deep.<br/>
 					<br/>
 					Now that you're adept at inserting, deleting, saving and loading notes, we're going to talk about commands for shifting around what's already there.<br/>
 					<br/>
-					To move a note to a different tick within the phrase, use <b>Shift-Q</b> and <b>Shift-W</b>. To shift all notes in the phrase, use <b>Shift-E</b> and <b>Shift-R</b>. The notes will be moved by a number of spaces equal to the current velocity value.<br/>
+					There are <b>Cut-Copy-Paste</b> commands, as well, but because the editor is controlled without the mouse, they might be a little different from what you're used to.<br/>
+					First, you must set your <b>copy range</b>. Use <b>Shift-Tab-!</b> and <b>Shift-Tab-@</b> to define the top and bottom of the copy range, respectively. (<b>Shift-Tab-#</b> will unset the current copy-range positions.)<br/>
+					After defining a range, you may use <b>Shift-Tab-X</b> to <b>Cut</b>, or <b>Shift-Tab-C</b> to <b>Copy</b>. You may then move to any position in any phrase, and use <b>Shift-Tab-V</b> to <b>Paste</b>.<br/>
 					<br/>
-					To shift the active note up or down by a certain number of semitones, use <b>Shift-A</b> and <b>Shift-S</b>. To do this to every note in the phrase, use <b>Shift-D</b> and <b>Shift-F</b>. Again, the notes' pitches are changed based on the velocity value.<br/>
+					To <b>move a phrase</b> to an adjacent position on the button grid, switching it with the phrase in said adjacent position, the commands are: <b>Shift-Tab-Up</b>, <b>Shift-Tab-Left</b>, <b>Shift-Tab-Right</b>, and <b>Shift-Tab-Down</b>.<br/>
 					<br/>
-					To shift the active note's velocity-byte in the same manner, use <b>Shift-Z</b> and <b>Shift-X</b>. For every velocity byte in the phrase, use <b>Shift-C</b> and <b>Shift-V</b>. This also is dictated by the global velocity value.<br/>
+					To <b>move a note</b> to a different tick within the phrase, use <b>Shift-Q</b> and <b>Shift-W</b>. To shift all notes in the phrase, use <b>Shift-E</b> and <b>Shift-R</b>. The notes will be moved by a number of spaces equal to the current velocity value.<br/>
 					<br/>
-					If you want to automatically add NOTE-OFF commands before each NOTE-ON in the active phrase, hit <b>Shift-Tab-A</b>. Warning: This only works for monophonic phrases.<br/>
+					To <b>change the active note's pitch</b> up or down by a certain number of semitones, use <b>Shift-A</b> and <b>Shift-S</b>. To do this to every note in the phrase, use <b>Shift-D</b> and <b>Shift-F</b>. Again, the notes' pitches are changed based on the velocity value.<br/>
 					<br/>
-					To add NOTE-OFF commands that are spaced apart from their corresponding NOTE-ONs by the Spacing value, use <b>Shift-Tab-S</b>.<br/>
+					To <b>shift the active note's velocity</b> in the same manner, use <b>Shift-Z</b> and <b>Shift-X</b>. For every velocity byte in the phrase, use <b>Shift-C</b> and <b>Shift-V</b>. This also is dictated by the global velocity value.<br/>
 					<br/>
-					At some point, your keyboard input into PhrasesPd may have stopped working. This, regrettably, is because Puredata and pdlua don't necessarily handle rapid-fire keychords that well. But fear not! Your work is not lost! Hit <b>Space</b> once. This is the keychord panic button, and PhrasesPd ought to start accepting user input again. (To ease your mind: this will never happen with Monome buttons. The underlying structure there is much more reliable.)<br/>
+					PhrasesPd can <b>automatically add NOTE-OFF commands</b> to a phrase. It is able to do this in two ways:<br/>
+					If you want to add NOTE-OFF commands before each NOTE-ON in the active phrase, hit <b>Shift-Tab-A</b>. <i>Note: This only works correctly for monophonic phrases.</i><br/>
+					To add NOTE-OFF commands that are seperated from their corresponding NOTE-ONs by the Spacing value, use <b>Shift-Tab-S</b>.<br/>
+					<br/>
+					At some point, your keyboard input into PhrasesPd <b>may have stopped working</b>. This, regrettably, is because Puredata and pdlua don't necessarily handle rapid-fire keychords that well. But fear not! Your work is not lost! Hit <b>Space</b> once. This is the <b>keychord panic button</b>, and PhrasesPd ought to start accepting user input again. (To ease your mind: this will never happen with Monome buttons. The underlying structure there is much more reliable.)<br/>
 					<br/>
 					That is the extent of PhrasesPd's advanced editor commands. In the next installment, we will be talking about ADC Control and Transference.<br/>
 					<br/>

@@ -39,11 +39,11 @@
 					<b>End</b>: Move the pointer to the inverse note from its current location.<br/>
 					<b>Left Right</b>: Move to the previous/next phrase.<br/>
 					<br/>
-					At the top of the second column from the right, you should see a box containing the word "PLAY". Hit your <b>Esc</b> key, and this ought to change to "REC". While in REC mode, you will be able to edit the contents of the song's phrases, and you will be able to tab to any phrase in the editor by pressing your <b>Monome buttons</b> as well.<br/>
+					At the top of the second column from the right, you should see a box containing the word <b>PLAY</b>. Hit your <b>Esc</b> key, and this ought to change to <b>REC</b>. While in REC mode, you will be able to edit the contents of the song's phrases, and you will be able to tab to any phrase in the editor by pressing your <b>Monome buttons</b> as well.<br/>
 					<br/>
-					<b>zsxdcvgbhnjm,lq2w3er5t6y7ui9o0p</b>: These keys will record notes into a phrase, while in REC mode. On a standard QWERTY keyboard, these keys take the form of a two-tiered piano; if you're on another keyboard layout, you're going to have to change the "kbnames" sub-table within <b>phrases-main-tables.lua</b>.<br/>
+					<b>zsxdcvgbhnjm,lq2w3er5t6y7ui9o0p</b>: These keys will record notes into a phrase, while in REC mode. On a standard QWERTY keyboard, these keys take the form of a two-tiered piano; if you're using another keyboard layout (e.g. DVORAK), you will have to change the <b>kbnames</b> sub-table within <b>phrases-main-tables.lua</b>.<br/>
 					<br/>
-					<b>Backspace</b>: Enter a blank note. Blank notes are important; they mark the end of each tempo tick. If a phrase contains no blank notes, it will fall into an infinite loop, which is really bad! Every MIDI command on the same tick as a blank note will be sent when the phrase reaches that tick.<br/>
+					<b>Backspace</b>: Enter a blank note. Blank notes are important; they mark the end of each tempo tick. If a phrase contains no blank notes, it will fall into an infinite loop, which is really bad and will probably cause fatal errors! So, don't forget about them. Every MIDI command on the same tick as a blank note will be sent when the phrase reaches that tick.<br/>
 					<br/>
 					<b>Delete</b>: Delete a command.<br/>
 					<br/>
@@ -51,18 +51,18 @@
 					<br/>
 					<b>[ ]</b>: Change octave number.<br/>
 					<br/>
-					<b>- =</b>: Shift velocity value by 1.<br/>
-					<b>_ +</b>: Shift velocity value by 10.<br/>
+					<b>- =</b>: Shift velocity value up/down by 1.<br/>
+					<b>_ +</b>: Shift velocity value up/down by 10.<br/>
 					<br/>
 					<b>. /</b>: Change MIDI command type.<br/>
 					<br/>
-					<b>Shift-Up, Shift-Down</b>: Change the spacing value. When a note is entered, a number of blank notes equal to the spacing value will be automatically added thereafter.<br/>
+					<b>Shift-Up, Shift-Down</b>: Change the <b>Spacing</b> value. When a note is entered, a number of blank notes equal to the Spacing value will be automatically added thereafter.<br/>
 					<br/>
-					Once you have entered a few phrases' worth of notes, with the correct MIDI values to activate the MIDI devices in your setup, feel free to hit <b>Esc</b> again to toggle back into PLAY mode. Now you should be able to press those phrases' corresponding Monome keys, and trigger the phrases themselves!<br/>
+					Once you have entered a few phrases' worth of notes, with the correct MIDI values to activate the MIDI devices in your setup, feel free to hit <b>Esc</b> again to toggle back into <b>PLAY</b> mode. Now you should be able to press those phrases' corresponding Monome keys, and trigger the phrases themselves!<br/>
 					<br/>
 					If you focus on the Grid Window, you will see that your phrases have come alive!<br/>
 					<br/>
-					You may notice some lag between when you press your Monome's buttons and when your phrases activate. Don't worry, this isn't a bug - this is PhrasesPd's "gating" feature. In the Editor Window, if you look at the bottommost items in the second column from the right, you will see <b>BPM</b>, <b>TPB</b>, and <b>GATE</b> values. BPM is Beats Per Minute; TPB is Ticks Per Beat; and GATE is the number of ticks that PhrasesPd waits before obeying user commands on the Monome.<br/>
+					You may notice some lag between when you press your Monome's buttons and when your phrases activate. Don't worry, this isn't a bug - this is PhrasesPd's <b>Gating</b> feature. In the Editor Window, if you look at the bottommost items in the second column from the right, you will see <b>BPM</b>, <b>TPB</b>, and <b>GATE</b> values. BPM is Beats Per Minute; TPB is Ticks Per Beat; and GATE is the number of ticks that PhrasesPd waits before obeying user commands on the Monome.<br/>
 					<br/>
 					This is specifically designed so that during their performances, musicians will have some leeway time for triggering phrases, so that superhuman timing is not required. If you are really hardcore, you can set your GATE value to 1; but I advise something in the 10-32 range, depending on the song's tempo and meter, of course. For a song in 4/4 time, a GATE of 16 or 32 is probably best.<br/>
 					<br/>
@@ -70,9 +70,10 @@
 					<br/>
 					Now, use your Monome to turn off whatever phrases you have playing, but stay in PLAY mode, because you'll be typing things in a moment and you don't want to clog your phrases with unwanted MIDI notes.<br/>
 					<br/>
-					You will now learn how to save your songfile. Focus on the Main Window, and click on the "Custom Savefile" box. Type in "fancysong.lua", or whatever song name you'd prefer, and then hit Enter, and click on an empty portion of the window to deselect the savefile box. Note: You must always remember to include the ".lua" at the end of your savefile names.<br/>
+					You will now learn how to save your songfile. Focus on the Main Window, and click on the <b>Custom Savefile</b> box. Type in "fancysong.lua", or whatever song name you'd prefer, and then hit <b>Enter</b>, and <b>click</b> on an empty portion of the window to deselect the savefile box.<br/>
+					<i>Note: You must always remember to include the ".lua" at the end of your savefile names.</i><br/>
 					<br/>
-					We haven't saved your songfile yet, though! You have only entered the savefile name. To save your current songdata to that location, simply hit <b>Shift-?-|</b>. In the Puredata console window, you should see a message along the lines of "Data saved to C:/Users/Christian/My Documents/MUSIC_STAGING/fancysong.lua", which is confirmation that your songdata has been saved to the current active savefile name.<br/>
+					We haven't saved your songfile yet, though! You have only entered the savefile name. To save your current songdata to that location, simply hit <b>Shift-?-|</b>. In the Puredata console window, you should see a message along the lines of, <b>Data saved to C:/Users/Christian/My Documents/MUSIC_STAGING/fancysong.lua</b>, which is confirmation that your songdata has been saved to the current active savefile name.<br/>
 					<br/>
 					Congratulations! You have saved your first song. In the next section, we will take a look at advanced editor commands.<br/>
 					<br/>
